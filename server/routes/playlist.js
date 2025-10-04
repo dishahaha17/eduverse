@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
 
     // Get the prompt and the structured generation config
     const { prompt, generationConfig } = getCourseGenerationPayload(videos);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro-latest' }); 
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' }); 
 
     const result = await model.generateContent({
       contents: [{ role: "user", parts: [{ text: prompt }] }],
